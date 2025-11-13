@@ -1,3 +1,5 @@
+import React from "react";
+
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 bg-gradient-to-b from-card/30 to-background">
