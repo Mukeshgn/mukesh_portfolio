@@ -1,7 +1,7 @@
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github, Play, FileText, Presentation } from "lucide-react";
-import { useEffect } from "react";
 
 const projectsData = {
   "shopping-analysis": {
