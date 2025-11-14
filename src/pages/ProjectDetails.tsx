@@ -91,6 +91,18 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Reset embed states when project changes
+    setPptEmbedFailed(false);
+    setReportEmbedFailed(false);
+    
+    // Auto-detect embed failures after 3 seconds
+    const pptTimer = setTimeout(() => setPptEmbedFailed(true), 3000);
+    const reportTimer = setTimeout(() => setReportEmbedFailed(true), 4000);
+    
+    return () => {
+      clearTimeout(pptTimer);
+      clearTimeout(reportTimer);
+    };
   }, [id]);
 
   const scrollToSection = (sectionId: string) => {
