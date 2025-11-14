@@ -1,4 +1,4 @@
-import { Database, Code2, BarChart3, Award } from "lucide-react";
+import { Database, Code2, BarChart3, Award, Github } from "lucide-react";
 
 const skills = [
   {
@@ -10,7 +10,7 @@ const skills = [
   {
     icon: Code2,
     category: "Programming & Tools",
-    items: ["Python", "Java", "SQL Server", "PostgreSQL", "Azure SQL", "Git", "VS Code", "Jupyter Notebook"],
+    items: ["Python", "Java", "SQL Server", "PostgreSQL", "Git", "VS Code", "Jupyter Notebook"],
     level: 80,
   },
   {
@@ -24,22 +24,27 @@ const skills = [
 const certifications = [
   {
     name: "Deloitte Data Analytics Job Simulation",
+    image: "https://drive.google.com/thumbnail?id=1ZqA-XzAfy9AyH-lc3at56LIfBjInpSmO&sz=w1000",
     link: "https://drive.google.com/file/d/1ZqA-XzAfy9AyH-lc3at56LIfBjInpSmO/view"
   },
   {
     name: "Design Power BI Reports — Microsoft",
+    image: "https://drive.google.com/thumbnail?id=1_yzV7BMS1fszGmNHeQuK3RCga2zsO1G6&sz=w1000",
     link: "https://drive.google.com/file/d/1_yzV7BMS1fszGmNHeQuK3RCga2zsO1G6/view"
   },
   {
     name: "Introduction to SQL — Simplilearn",
+    image: "https://drive.google.com/thumbnail?id=1Yxm9QN0bLBsMl_MrNsCoE2ut7eKpfT5U&sz=w1000",
     link: "https://drive.google.com/file/d/1Yxm9QN0bLBsMl_MrNsCoE2ut7eKpfT5U/view"
   },
   {
     name: "Introduction to Excel — Simplilearn",
+    image: "https://drive.google.com/thumbnail?id=1CO9lzOgexlbLfVb2PsWNytQbDA11RCzA&sz=w1000",
     link: "https://drive.google.com/file/d/1CO9lzOgexlbLfVb2PsWNytQbDA11RCzA/view"
   },
   {
     name: "Java Programming — Udemy",
+    image: "https://drive.google.com/thumbnail?id=1qRPblsfNHCLOKBOuSjsPXqiwEoutKfta&sz=w1000",
     link: "https://drive.google.com/file/d/1qRPblsfNHCLOKBOuSjsPXqiwEoutKfta/view"
   }
 ];
@@ -112,30 +117,58 @@ const Skills = () => {
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {certifications.map((cert, index) => (
             <div
               key={cert.name}
-              className="group relative bg-gradient-card backdrop-blur-sm rounded-xl p-6 border border-border shadow-card hover:shadow-hover transition-all duration-500"
+              className="group relative bg-gradient-card backdrop-blur-sm rounded-xl border border-border shadow-card hover:shadow-hover transition-all duration-500 overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="absolute inset-0 bg-gradient-primary rounded-xl opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
               
               <div className="relative z-10">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg border border-primary/20">
-                    <Award className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-foreground mb-2">{cert.name}</h3>
-                    <p className="text-sm text-muted-foreground break-all font-mono">
-                      {cert.link}
-                    </p>
-                  </div>
+                <div className="aspect-video w-full overflow-hidden bg-muted/20">
+                  <img 
+                    src={cert.image}
+                    alt={`${cert.name} certificate`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <div className="p-4">
+                  <h3 className="text-base font-bold text-foreground mb-3 line-clamp-2 min-h-[3rem]">
+                    {cert.name}
+                  </h3>
+                  
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-full justify-center px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-sm font-medium border border-primary/20 transition-all duration-300 group-hover:border-primary/40"
+                    aria-label={`View ${cert.name} certificate in new tab`}
+                  >
+                    <Award className="w-4 h-4" />
+                    View Certificate
+                  </a>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Practice Files Button */}
+        <div className="flex justify-center mt-8">
+          <a
+            href="https://github.com/Mukeshgn/Anudip"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary hover:shadow-hover text-primary-foreground rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105"
+            aria-label="View practice files on GitHub (opens in new tab)"
+          >
+            <Github className="w-4 h-4" />
+            Practice Files
+          </a>
         </div>
       </div>
     </section>

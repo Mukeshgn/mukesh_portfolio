@@ -14,8 +14,9 @@ const projectsData = {
       fallback: "https://youtu.be/LymKShIJWho"
     },
     ppt: {
-      embed: "https://docs.google.com/presentation/d/1RmdMpfw84WRFj7Ofo3Nq6k5g5_287RY3/preview",
-      fallback: "https://docs.google.com/presentation/d/1RmdMpfw84WRFj7Ofo3Nq6k5g5_287RY3/edit?usp=drive_link"
+      embed: "https://docs.google.com/presentation/d/1RmdMpfw84WRFj7Ofo3Nq6k5g5_287RY3/embed?start=false&loop=false&delayms=3000",
+      fallback: "https://docs.google.com/presentation/d/1RmdMpfw84WRFj7Ofo3Nq6k5g5_287RY3/view",
+      download: "https://drive.google.com/uc?export=download&id=1RmdMpfw84WRFj7Ofo3Nq6k5g5_287RY3"
     },
     report: {
       embed: "https://drive.google.com/file/d/1ZnbGF4qmNsIkyeeE3AhGSp-Gctqc7zIe/preview",
@@ -27,10 +28,14 @@ const projectsData = {
     about: "An end-to-end sales analytics project that analyzes regional sales performance to identify revenue drivers, product trends, and profitability patterns. Combines Python EDA with an interactive Power BI dashboard and executive reports for business decision support. Work included exploratory data analysis, data cleaning, and feature engineering in Python, along with comprehensive visualization and reporting in Power BI. This project demonstrates advanced business intelligence capabilities and strategic insight generation.",
     github: "https://github.com/Mukeshgn/company-sales-analysis",
     technologies: ["Python (Pandas, Matplotlib, Seaborn)", "Power BI", "Excel", "Git & GitHub"],
-    video: null,
+    video: {
+      embed: "https://www.youtube.com/embed/sb-TKsbFpfk?rel=0&controls=1",
+      fallback: "https://www.youtube.com/watch?v=sb-TKsbFpfk"
+    },
     ppt: {
-      embed: "https://docs.google.com/presentation/d/1yu85Borhe9Dtn-X0Z9gXX8lzULhxbDPa/preview",
-      fallback: "https://docs.google.com/presentation/d/1yu85Borhe9Dtn-X0Z9gXX8lzULhxbDPa/edit?usp=drive_link"
+      embed: "https://docs.google.com/presentation/d/1yu85Borhe9Dtn-X0Z9gXX8lzULhxbDPa/embed?start=false&loop=false&delayms=3000",
+      fallback: "https://docs.google.com/presentation/d/1yu85Borhe9Dtn-X0Z9gXX8lzULhxbDPa/view",
+      download: "https://drive.google.com/uc?export=download&id=1yu85Borhe9Dtn-X0Z9gXX8lzULhxbDPa"
     },
     report: {
       embed: "https://drive.google.com/file/d/1Yl6G5EvhprGYcT1Xo83UlnnSLBeXmQom/preview",
@@ -47,8 +52,9 @@ const projectsData = {
       fallback: "https://youtu.be/PgPFCZ1Iq0g"
     },
     ppt: {
-      embed: "https://docs.google.com/presentation/d/19Pfj9OR1MNZFx6slEwihUdcSepAn474N/preview",
-      fallback: "https://docs.google.com/presentation/d/19Pfj9OR1MNZFx6slEwihUdcSepAn474N/edit?usp=drive_link"
+      embed: "https://docs.google.com/presentation/d/19Pfj9OR1MNZFx6slEwihUdcSepAn474N/embed?start=false&loop=false&delayms=3000",
+      fallback: "https://docs.google.com/presentation/d/19Pfj9OR1MNZFx6slEwihUdcSepAn474N/view",
+      download: "https://drive.google.com/uc?export=download&id=19Pfj9OR1MNZFx6slEwihUdcSepAn474N"
     },
     report: {
       embed: "https://drive.google.com/file/d/16NFpaKmuP0hcy9j6skp90aeYXvCC3lrp/preview",
@@ -65,8 +71,9 @@ const projectsData = {
       fallback: "https://youtu.be/NHdwkzuHpbs"
     },
     ppt: {
-      embed: "https://docs.google.com/presentation/d/1yY8VpQxKwJzNJ5xzJxJxJxJxJxJxJxJ/preview",
-      fallback: "https://docs.google.com/presentation/d/1yY8VpQxKwJzNJ5xzJxJxJxJxJxJxJxJ/edit?usp=drive_link"
+      embed: "https://docs.google.com/presentation/d/1H0lDEZAFy9RRsvEPNUuWwQUzFA4CBBjn/embed?start=false&loop=false&delayms=3000",
+      fallback: "https://docs.google.com/presentation/d/1H0lDEZAFy9RRsvEPNUuWwQUzFA4CBBjn/view",
+      download: "https://drive.google.com/uc?export=download&id=1H0lDEZAFy9RRsvEPNUuWwQUzFA4CBBjn"
     },
     report: {
       embed: "https://drive.google.com/file/d/1yY8VpQxKwJzNJ5xzJxJxJxJxJxJxJxJ/preview",
