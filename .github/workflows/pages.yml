@@ -30,9 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/client
-          # IMPORTANT: Lovable outputs your static site here
-
+          path: ./dist   # <-- FIXED (Vite build output)
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
