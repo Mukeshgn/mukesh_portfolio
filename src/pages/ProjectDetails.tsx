@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Github, Play, FileText, Presentation } from "lucide-react";
+import { ArrowLeft, Github, Play, FileText, Presentation, Download, ExternalLink } from "lucide-react";
 
 const projectsData = {
   "shopping-analysis": {
@@ -86,6 +86,8 @@ const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const project = id ? projectsData[id as keyof typeof projectsData] : null;
+  const [pptEmbedFailed, setPptEmbedFailed] = useState(false);
+  const [reportEmbedFailed, setReportEmbedFailed] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -238,46 +240,105 @@ const ProjectDetails = () => {
           {/* PPT Section */}
           <div id="ppt" className="scroll-mt-20">
             <h2 className="text-2xl font-bold text-foreground mb-4">Presentation (Slides)</h2>
-            <div className="aspect-video rounded-xl overflow-hidden bg-muted/20 border border-border shadow-card">
-              <iframe
-                src={project.ppt.embed}
-                className="w-full h-full"
-                loading="lazy"
-                title={`${project.title} presentation`}
-                allow="autoplay"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <Button
-                variant="link"
-                className="text-primary"
-                onClick={() => window.open(project.ppt.fallback, '_blank', 'noopener,noreferrer')}
-              >
-                Preview unavailable? Open in new tab
-              </Button>
-            </div>
+            {pptEmbedFailed ? (
+              <div className="bg-gradient-card backdrop-blur-sm rounded-xl p-8 border border-border shadow-card text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                  <Presentation className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Presentation Preview Unavailable</h3>
+                <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                  Google Slides embedding is restricted. View or download the presentation using the buttons below.
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center">
+                  <Button
+                    className="bg-gradient-primary hover:shadow-hover transition-all"
+                    onClick={() => window.open(project.ppt.fallback, '_blank', 'noopener,noreferrer')}
+                    aria-label="View presentation in Google Slides (new tab)"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Presentation
+                  </Button>
+                  {project.ppt.download && (
+                    <Button
+                      variant="outline"
+                      className="border-primary/50 hover:bg-primary/10"
+                      onClick={() => window.open(project.ppt.download, '_blank', 'noopener,noreferrer')}
+                      aria-label="Download presentation file"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Download PPT
+                    </Button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="aspect-video rounded-xl overflow-hidden bg-muted/20 border border-border shadow-card">
+                  <iframe
+                    src={project.ppt.embed}
+                    className="w-full h-full"
+                    loading="lazy"
+                    title={`${project.title} presentation`}
+                    allow="autoplay"
+                    onError={() => setPptEmbedFailed(true)}
+                  />
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3 justify-center">
+                  <Button
+                    variant="link"
+                    className="text-primary"
+                    onClick={() => setPptEmbedFailed(true)}
+                  >
+                    Embed not loading? Show alternatives
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Report Section */}
           <div id="report" className="scroll-mt-20">
             <h2 className="text-2xl font-bold text-foreground mb-4">Full Report (PDF)</h2>
-            <div className="aspect-[8.5/11] rounded-xl overflow-hidden bg-muted/20 border border-border shadow-card">
-              <iframe
-                src={project.report.embed}
-                className="w-full h-full"
-                loading="lazy"
-                title={`${project.title} report`}
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <Button
-                variant="link"
-                className="text-primary"
-                onClick={() => window.open(project.report.fallback, '_blank', 'noopener,noreferrer')}
-              >
-                Preview unavailable? Open in new tab
-              </Button>
-            </div>
+            {reportEmbedFailed ? (
+              <div className="bg-gradient-card backdrop-blur-sm rounded-xl p-8 border border-border shadow-card text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                  <FileText className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">Report Preview Unavailable</h3>
+                <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                  PDF embedding is restricted. Open the report in a new tab to view it.
+                </p>
+                <Button
+                  className="bg-gradient-primary hover:shadow-hover transition-all"
+                  onClick={() => window.open(project.report.fallback, '_blank', 'noopener,noreferrer')}
+                  aria-label="View report in new tab"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Report
+                </Button>
+              </div>
+            ) : (
+              <>
+                <div className="aspect-[8.5/11] rounded-xl overflow-hidden bg-muted/20 border border-border shadow-card">
+                  <iframe
+                    src={project.report.embed}
+                    className="w-full h-full"
+                    loading="lazy"
+                    title={`${project.title} report`}
+                    onError={() => setReportEmbedFailed(true)}
+                  />
+                </div>
+                <div className="mt-4 flex justify-center">
+                  <Button
+                    variant="link"
+                    className="text-primary"
+                    onClick={() => setReportEmbedFailed(true)}
+                  >
+                    Embed not loading? Show alternatives
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
