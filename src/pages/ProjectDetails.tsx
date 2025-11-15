@@ -75,10 +75,10 @@ const projectsData = {
       fallback: "https://docs.google.com/presentation/d/1H0lDEZAFy9RRsvEPNUuWwQUzFA4CBBjn/view",
       download: "https://drive.google.com/uc?export=download&id=1H0lDEZAFy9RRsvEPNUuWwQUzFA4CBBjn"
     },
-    report: {
-      embed: "https://drive.google.com/file/d/1yY8VpQxKwJzNJ5xzJxJxJxJxJxJxJxJ/preview",
-      fallback: "https://drive.google.com/file/d/1yY8VpQxKwJzNJ5xzJxJxJxJxJxJxJxJ/view?usp=drive_link"
-    }
+     report: {
+    embed: "https://drive.google.com/file/d/1t5TSz9cgjSOG0WzZpThAq_KL_O_6BeEW/preview",
+    fallback: "https://drive.google.com/file/d/1t5TSz9cgjSOG0WzZpThAq_KL_O_6BeEW/view?usp=drive_link"
+  }
   }
 };
 
