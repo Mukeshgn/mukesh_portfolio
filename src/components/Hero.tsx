@@ -80,7 +80,7 @@ const Hero = () => {
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </Button>
-              <Button 
+              {/*  <Button 
                 size="lg" 
                 variant="outline"
                 className="border-primary/50 hover:bg-primary/10"
@@ -89,16 +89,8 @@ const Hero = () => {
                 <FileText className="w-4 h-4 mr-2" />
                 Resume
               </Button>
-              {/*
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-primary/50 hover:bg-primary/10"
-                onClick={() => scrollToSection('contact')}
-              >
-                Contact Me
-              </Button>
               */}
+           
               {/*
               <a
                   href="https://mukeshgn.github.io/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
@@ -131,7 +123,14 @@ const Hero = () => {
                     Resume
                   </Button>
                 </a>
-
+                   <Button 
+                size="lg" 
+                variant="outline"
+                className="border-primary/50 hover:bg-primary/10"
+                onClick={() => scrollToSection('contact')}
+              >
+                Contact Me
+              </Button>
 
             </div>
           </div>
