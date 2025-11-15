@@ -160,7 +160,7 @@ const Skills = () => {
         {/* Practice Files Button */}
         <div className="flex justify-center mt-8">
           <a
-            href="https://github.com/Mukeshgn/Anudip"
+            href="https://github.com/Mukeshgn/Practice_Files"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary hover:shadow-hover text-primary-foreground rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105"
