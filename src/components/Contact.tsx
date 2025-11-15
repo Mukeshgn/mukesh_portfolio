@@ -114,20 +114,22 @@ const Contact = () => {
                 Download Resume
               </Button>
               */}
-             <a
-                href="/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
-                download="Mukesh_GopiNandh_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="w-full bg-gradient-primary hover:shadow-hover transition"
-                >
-                  <FileText className="w-4 h-4 mr-2" />
-                  Download Resume
-                </Button>
-              </a>
+{/* Download Resume */}
+<a
+  href="/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
+  download="Mukesh_GopiNandh_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="w-full bg-gradient-primary hover:shadow-hover transition"
+  >
+    <FileText className="w-4 h-4 mr-2" />
+    Download Resume
+  </Button>
+</a>
+
 
 
               <p className="text-sm text-muted-foreground text-center">
