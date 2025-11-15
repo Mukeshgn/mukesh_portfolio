@@ -99,6 +99,7 @@ const Hero = () => {
                 Contact Me
               </Button>
               */}
+              {/*
               <a
                   href="https://mukeshgn.github.io/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
                   download="Mukesh_GopiNandh_Resume.pdf"
@@ -114,6 +115,23 @@ const Hero = () => {
                     Resume
                   </Button>
                 </a>
+                */>
+                <a
+                  href="https://mukeshgn.github.io/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
+                  download="Mukesh_GopiNandh_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-primary/50 hover:bg-primary/10"
+                  >
+                    <FileText className="w-4 h-4 mr-2" />
+                    Resume
+                  </Button>
+                </a>
+
 
             </div>
           </div>
