@@ -108,30 +108,33 @@ const Hero = () => {
                   </Button>
                 </a>
                 */>
-                <a
-                  href="https://mukeshgn.github.io/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
-                  download="Mukesh_GopiNandh_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-primary/50 hover:bg-primary/10"
-                  >
-                    <FileText className="w-4 h-4 mr-2" />
-                    Resume
-                  </Button>
-                </a>
-                   <Button 
-                size="lg" 
-                variant="outline"
-                className="border-primary/50 hover:bg-primary/10"
-                onClick={() => scrollToSection('contact')}
-              >
-                Contact Me
-              </Button>
+               
+ {/* Resume - single working download button */}
+  <a
+    href="/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
+    download="Mukesh_GopiNandh_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      size="lg"
+      variant="outline"
+      className="border-primary/50 hover:bg-primary/10"
+    >
+      <FileText className="w-4 h-4 mr-2" />
+      Resume
+    </Button>
+  </a>
 
+  {/* Contact Me - scroll to contact section */}
+  <Button 
+    size="lg" 
+    variant="outline"
+    className="border-primary/50 hover:bg-primary/10"
+    onClick={() => scrollToSection('contact')}
+  >
+    Contact Me
+  </Button>
             </div>
           </div>
 
