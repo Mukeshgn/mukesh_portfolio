@@ -105,14 +105,22 @@ const Contact = () => {
             <div className="bg-gradient-card backdrop-blur-sm rounded-xl p-8 border border-border shadow-card">
               <h3 className="text-2xl font-bold text-foreground mb-6">Resume</h3>
       
+            {/* Download Resume */}
+            <a
+                href="/mukesh_portfolio/Mukesh_GopiNandh_Resume.pdf"
+                download="Mukesh_GopiNandh_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
                 className="w-full bg-gradient-primary hover:shadow-hover transition-all duration-300 transform hover:scale-105 mb-3"
-                onClick={() => window.open('/Mukesh_GopiNandh_Resume.pdf', '_blank')}
               >
                 <FileText className="w-4 h-4 mr-2" />
                 Download Resume
               </Button>
+            </a>
+
           
 
 
