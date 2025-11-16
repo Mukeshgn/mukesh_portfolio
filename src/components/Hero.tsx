@@ -84,7 +84,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline"
                 className="border-primary/50 hover:bg-primary/10"
-                onClick={() => window.open('/Mukesh_GopiNandh_Resume.pdf', '_blank')}
+                onClick={() => window.open(`${import.meta.env.BASE_URL}Mukesh_GopiNandh_Resume.pdf`, '_blank', 'noopener,noreferrer')}
               >
                 <FileText className="w-4 h-4 mr-2" />
                 Resume
