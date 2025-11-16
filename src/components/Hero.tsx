@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, FileText } from "lucide-react";
-import heroBg from "@/assets/data-tech-bg.jpg";
-import mukeshPhoto from "@/assets/mukesh-profile.jpg";
+import heroBg from "@/assets/data-tech-bg.webp";
+import mukeshPhoto from "@/assets/mukesh-profile.webp";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -108,6 +108,8 @@ const Hero = () => {
                   src={mukeshPhoto} 
                   alt="Mukesh Gopi Nandh Udatha - Data Analyst" 
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
